@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { ImMenu } from 'react-icons/im'
-import { MdDashboard, MdOutlineSubtitles } from 'react-icons/md'
+import { MdOutlineSubtitles } from 'react-icons/md'
 import { RxDashboard } from "react-icons/rx"
 import { BiSolidShoppingBags, BiSolidCartDownload, BiSolidMessageError } from 'react-icons/bi'
 import { FaMoneyBillTrendUp, FaUsers } from 'react-icons/fa6'
@@ -66,8 +66,8 @@ const AdminSidebar = () => {
 
     return (
         <div className={
-            collapseBarState ? (' h-screen flex flex-col items-center   transition-all ease-linear w-[60px]') : (
-                ' h-screen flex flex-col items-center  overflow-hidden transition-all ease-linear w-[250px]'
+            collapseBarState ? (' top-0 sticky h-screen flex flex-col items-center   transition-all ease-linear w-[60px] self-start') : (
+                'top-0 sticky h-screen flex flex-col items-center  overflow-hidden transition-all ease-linear w-[200px] self-start'
             )
         }>
             <div className="w-full flex items-center justify-around align-middle py-2 px-4  border-b mb-5 border-yellow-200">
@@ -86,15 +86,16 @@ const AdminSidebar = () => {
             <div className="w-full px-4 py-2  flex flex-col align-middle justify-center gap-5 text-lg font-bold ">
                 {
                     navLinks.map((link) => (<Link className={
-                        currentPath === link.tag ? ('w-full flex  p-1 rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 items-center cursor-pointer text-yellow-600 bg-gray-300 hover:text-yellow-300 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300')
+                        currentPath === link.tag ? ('w-full flex  p-1 rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 items-center cursor-pointer text-xl  text-yellow-600 bg-gray-300 hover:text-yellow-300 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300 shadow-inner')
                             :
-                            ('w-full flex  p-1 rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 items-center cursor-pointer hover:text-yellow-100 hover:bg-gray-300 active:bg-gray-100 focus:bg-gray-100')
+                            ('w-full flex  p-1rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 text-xl  items-center cursor-pointer hover:text-yellow-100 hover:bg-gray-300 active:bg-gray-100 focus:bg-gray-100')
                     } key={link.linkName} href={link.tag}>
                         {link.icon}
                         {!collapseBarState && link.linkName}
                     </Link>))
                 }
             </div>
+
             <div className="w-full mt-3 border-t-2 border-slate-400 flex flex-col align-middle justify-between p-1 gap-2 my-auto self-end">
                 <section
                     className='flex align-middle justify-around '>
@@ -126,8 +127,6 @@ const AdminSidebar = () => {
                         }
                     </button>
                 </section>
-
-
             </div>
         </div>
     )

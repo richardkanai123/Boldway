@@ -4,11 +4,12 @@ import { FcSalesPerformance } from "react-icons/fc"
 import { MdPending } from 'react-icons/md'
 import { FaPeopleGroup } from 'react-icons/fa6'
 import { BiSolidMessageDots } from 'react-icons/bi'
+import { BarChat } from '../_Components/AdminComponents/BarChat'
 
 const Page = () => {
     return (
-        <div className='flex-1 transition-all duration-200 delay-100 bg-slate-100 min-h-screen  flex flex-col align-middle items-center flex-wrap gap-2 flex-1transition-all ease-linear p-2 '>
-            <div className="w-full flex gap-2 flex-wrap ">
+        <div className='flex-1 transition-all duration-200 delay-150 bg-slate-100 min-h-screen  flex flex-col align-middle items-center flex-wrap gap-2  ease-linear p-2  '>
+            <div className="w-full flex gap-2 flex-wrap align-middle items-center justify-around shadow-inner border-b border-slate-400 p-2 ">
                 <InfoCard CardTitle={"Total Sales"} figure={200}
                     details={"Ksh. earned all from Sales"}
                     icon={<FcSalesPerformance className='font-bold text-2xl' />}
@@ -28,11 +29,15 @@ const Page = () => {
 
                 <InfoCard CardTitle={"Total Customers"} figure={170}
                     details={"Total Number of Customers Accounts"}
-                    icon={<BiSolidMessageDots className='text-yellow-300 font-bold text-2xl animate-bounce' />}
+                    icon={<BiSolidMessageDots className='text-yellow-300 font-bold text-2xl animate-pulse' />}
                 />
+
+
             </div>
 
-
+            <div className="w-full flex p-2 align-middle justify-center relative">
+                <BarChat />
+            </div>
 
         </div>
     )
