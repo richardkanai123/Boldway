@@ -31,29 +31,7 @@ const Page = () => {
                     icon={<BiSolidMessageDots className='text-yellow-300 font-bold text-2xl animate-bounce' />}
                 />
             </div>
-            <div className="w-full flex gap-2 flex-wrap ">
-                <InfoCard CardTitle={"Total Sales"} figure={200}
-                    details={"Ksh. earned all from Sales"}
-                    icon={<FcSalesPerformance className='font-bold text-2xl' />}
-                />
-                <InfoCard CardTitle={"Today's Sales"} figure={5}
-                    details={"Total Sales Made Today "}
-                    icon={<span className='font-light text-yellow-400'>{new Date().toLocaleDateString()}</span>}
-                />
-                <InfoCard CardTitle={"Pending Orders"} figure={10}
-                    details={"Orders pending confirmation or processing"}
-                    icon={<MdPending className='text-green-400 animate-pulse font-bold text-2xl' />}
-                />
-                <InfoCard CardTitle={"Unread Messages"} figure={2}
-                    details={"Messages Filled on The Contact Form"}
-                    icon={<FaPeopleGroup className='text-green-400 font-bold text-2xl' />}
-                />
 
-                <InfoCard CardTitle={"Total Customers"} figure={170}
-                    details={"Total Number of Customers Accounts"}
-                    icon={<BiSolidMessageDots className='text-yellow-300 font-bold text-2xl animate-bounce' />}
-                />
-            </div>
 
 
         </div>
