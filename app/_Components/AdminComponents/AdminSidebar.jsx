@@ -67,7 +67,7 @@ const AdminSidebar = () => {
     return (
         <div className={
             collapseBarState ? (' top-0 sticky h-screen flex flex-col items-center   transition-all ease-linear w-[60px] self-start') : (
-                'top-0 sticky h-screen flex flex-col items-center  overflow-hidden transition-all ease-linear w-[200px] self-start'
+                'top-0 sticky h-screen flex flex-col items-center  overflow-hidden transition-all ease-linear w-[200px] self-start z-30'
             )
         }>
             <div className="w-full flex items-center justify-around align-middle py-2 px-4  border-b mb-5 border-yellow-200">
@@ -85,14 +85,15 @@ const AdminSidebar = () => {
             </div>
             <div className="w-full px-4 py-2  flex flex-col align-middle justify-center gap-5 text-lg font-bold ">
                 {
-                    navLinks.map((link) => (<Link className={
-                        currentPath === link.tag ? ('w-full flex  p-1 rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 items-center cursor-pointer text-xl  text-yellow-600 bg-gray-300 hover:text-yellow-300 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300 shadow-inner')
-                            :
-                            ('w-full flex  p-1rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 text-xl  items-center cursor-pointer hover:text-yellow-100 hover:bg-gray-300 active:bg-gray-100 focus:bg-gray-100')
-                    } key={link.linkName} href={link.tag}>
-                        {link.icon}
-                        {!collapseBarState && link.linkName}
-                    </Link>))
+                    navLinks.map((link) => (
+                        <Link onClick={() => setCollapseBarState(true)} className={
+                            currentPath === link.tag ? ('w-full flex  p-1 rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 items-center cursor-pointer text-xl  text-yellow-600 bg-gray-300 hover:text-yellow-300 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300 shadow-inner')
+                                :
+                                ('w-full flex  p-1rounded-md rounded-md align-middle justify-start gap-4 transition-colors duration-200 ease-in delay-100 text-xl  items-center cursor-pointer hover:text-yellow-100 hover:bg-gray-300 active:bg-gray-100 focus:bg-gray-100')
+                        } key={link.linkName} href={link.tag}>
+                            {link.icon}
+                            {!collapseBarState && link.linkName}
+                        </Link>))
                 }
             </div>
 
@@ -100,8 +101,8 @@ const AdminSidebar = () => {
                 <section
                     className='flex align-middle justify-around '>
 
-                    <aside className='w-10 h-10 rounded-lg bg-slate-100 flex items-center align-middle justify-center object-cover relative'>
-                        <Image src="https://avataaars.io/?avatarStyle=Transparent&topType=Hijab&accessoriesType=Prescription02&hatColor=Blue03&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light"
+                    <aside className='w-10 h-10 rounded-lg bg-slate-100 flex items-center align-middle justify-center object-cover relative cursor-pointer'>
+                        <Image src="https://images.pexels.com/photos/13069698/pexels-photo-13069698.jpeg?auto=compress&cs=tinysrgb&w=600"
                             objectFit='cover'
                             fill={true}
                             alt="Admin Avatar" />
