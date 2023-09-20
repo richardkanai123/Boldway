@@ -23,7 +23,7 @@ const Page = async () => {
                 </Link>
             </div>
 
-            <div className='w-full p-2 shadow-inner flex align-middle justify-center gap-2 flex-wrap'>
+            <div className='bg-slate-400 w-full shadow-inner flex align-middle justify-center gap-2 flex-wrap'>
                 <Suspense fallback={
                     <h1>Loading Data</h1>
                 }>
