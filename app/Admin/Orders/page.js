@@ -1,17 +1,17 @@
 import React from 'react'
 
 const Page = async () => {
-    // const ordersData = await fetch(`${process.env.Web_Url}/api/orders`, {
+    const products = await fetch(`${process.env.Web_Url}/api/orders`, {
+        cache: "no-cache"
+    })
 
-    //     next: { revalidate: 60 }
-    // })
-    // const data = await ordersData.json()
-
+    const data = await products.json()
+    const OrdersData = data.orders
     return (
         <div className='flex-1 bg-slate-100 min-h-screen transition-all ease-linear p-2'>
-            <div>
-                orders go here
-            </div>
+            {OrdersData.map((order) => (
+                <h1 key={order.id}>{order.paymentStatus}</h1>
+            ))}
         </div>
     )
 }

@@ -3,14 +3,12 @@ import Link from 'next/link';
 import React, { Suspense } from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+// ${process.env.Web_Url}
 const Page = async () => {
     const products = await fetch(`${process.env.Web_Url}/api/products`, {
         cache: "no-cache"
     })
-    if (products.status != 'ok') {
-        return <h1>Error Occurred</h1>
-    }
+
     const data = await products.json()
     const ProductsData = data.products
     return (
