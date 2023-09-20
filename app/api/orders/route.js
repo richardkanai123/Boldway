@@ -9,7 +9,7 @@ export async function GET(req) {
             customerName: "Alice Johnson",
             dateOrdered: "2023-09-01",
             productId: 102,
-            orderStatus: "placed",
+            orderStatus: "pending",
             timeOrdered: "09:30 AM",
             amountPaid: 3500, // Amount in Kenyan Shillings
             paymentMode: "MPesa",
@@ -48,7 +48,7 @@ export async function GET(req) {
             customerName: "David Davis",
             dateOrdered: "2023-09-04",
             productId: 101,
-            orderStatus: "placed",
+            orderStatus: "pending",
             timeOrdered: "10:20 AM",
             amountPaid: 5500,
             paymentMode: "MPesa",
@@ -74,7 +74,7 @@ export async function GET(req) {
             customerName: "Frank Lee",
             dateOrdered: "2023-09-06",
             productId: 103,
-            orderStatus: "placed",
+            orderStatus: "pending",
             timeOrdered: "09:10 AM",
             amountPaid: 1500,
             paymentMode: "MPesa",
@@ -100,7 +100,7 @@ export async function GET(req) {
             customerName: "Henry King",
             dateOrdered: "2023-09-08",
             productId: 104,
-            orderStatus: "placed",
+            orderStatus: "pending",
             timeOrdered: "10:45 AM",
             amountPaid: 2800,
             paymentMode: "MPesa",
@@ -126,12 +126,25 @@ export async function GET(req) {
             customerName: "Jack Turner",
             dateOrdered: "2023-09-10",
             productId: 110,
-            orderStatus: "placed",
+            orderStatus: "pending",
             timeOrdered: "11:05 AM",
             amountPaid: 650,
             paymentMode: "MPesa",
             paymentStatus: "partial",
             pendingAmount: 150
+        },
+        {
+            orderID: 11,
+            customerID: 110,
+            customerName: "Jack Turner",
+            dateOrdered: "2023-09-11",
+            productId: 113,
+            orderStatus: "pending",
+            timeOrdered: "12:05 PM",
+            amountPaid: 800,
+            paymentMode: "MPesa",
+            paymentStatus: "paid",
+            pendingAmount: 0
         }
     ];
 

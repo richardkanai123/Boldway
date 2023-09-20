@@ -20,12 +20,11 @@ const Page = async () => {
                 </Link>
             </div>
             <Suspense fallback={
-
                 <div className='w-full flex self-center p-4 animate-pulse align-middle justify-center'>
                     Orders Loading .....
                 </div>
             }>
-                <OrdersTable />
+                <OrdersTable data={OrdersData} />
             </Suspense>
         </div >
     )

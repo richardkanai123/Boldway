@@ -101,10 +101,12 @@ const AdminSidebar = () => {
                 <section
                     className='flex align-middle justify-around '>
 
-                    <aside className='w-10 h-10 rounded-lg bg-slate-100 flex items-center align-middle justify-center object-cover relative cursor-pointer'>
+                    <aside className='w-8 h-8 rounded-full object-cover bg-slate-100 flex items-center align-middle justify-center  relative cursor-pointer'>
                         <Image src="https://images.pexels.com/photos/13069698/pexels-photo-13069698.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            objectFit='cover'
                             fill={true}
+                            object-fit='cover'
+                            className='rounded-full'
+                            sizes='32px'
                             alt="Admin Avatar" />
                     </aside>
 

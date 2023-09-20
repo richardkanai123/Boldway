@@ -19,12 +19,12 @@ const ProductCard = ({ productData }) => {
             <Image src={imageUrl}
                 className='self-center mb-2 p-1 rounded ring-1 ring-slate-100'
                 alt={title} width={100} height={80} />
-            <h3 className="text-left font-extrabold text-base mb-1 ">{title}</h3>
+            <h1 className="text-left font-extrabold text-base mb-1 ">{title}</h1>
             <p className='text-base font-light '>
                 {description}
             </p>
-            <p className='text-sm font-semibold mt-2'>Price: {price}</p>
-            <p className='text-xs font-thin mt-1 italic text-blue-400'>Discount Price: {discountPrice}</p>
+            <p className='text-sm font-bold mt-2'>Price: {price}</p>
+            <p className='text-xs font-semibold mt-1  text-zinc-800'>Discount Price: {discountPrice}</p>
 
             <div className="flex align-middle justify-between items-center p-1">
 
