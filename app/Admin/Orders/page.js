@@ -9,7 +9,9 @@ const Page = async () => {
 
     return (
         <div className='flex-1 bg-slate-100 min-h-screen transition-all ease-linear p-2'>
-            <pre>{JSON.stringify(data.orders, null, 2)}</pre>
+            <div>
+                orders go here
+            </div>
         </div>
     )
 }
