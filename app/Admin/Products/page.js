@@ -1,6 +1,6 @@
 import ProductCard from '@/app/_Components/AdminComponents/ProductCard'
 import Link from 'next/link';
-import React from 'react'
+import React, { Suspense } from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -8,6 +8,9 @@ const Page = async () => {
     const products = await fetch(`${process.env.Web_Url}/api/products`, {
         cache: "no-cache"
     })
+    if (products.status != 'ok') {
+        return <h1>Error Occurred</h1>
+    }
     const data = await products.json()
     const ProductsData = data.products
     return (
@@ -23,11 +26,15 @@ const Page = async () => {
             </div>
 
             <div className='w-full p-2 shadow-inner flex align-middle justify-center gap-2 flex-wrap'>
-                {
-                    ProductsData.map((data) => (
-                        <ProductCard key={data.id} productData={data} />
-                    ))
-                }
+                <Suspense fallback={
+                    <h1>Loading Data</h1>
+                }>
+                    {
+                        ProductsData.map((data) => (
+                            <ProductCard key={data.id} productData={data} />
+                        ))
+                    }
+                </Suspense>
             </div>
 
 
