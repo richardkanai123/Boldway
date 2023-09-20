@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Page = async () => {
-    const products = await fetch('./api/products', {
+    const products = await fetch(`${process.env.Web_Url}/api/products`, {
         cache: "no-cache"
     })
     const data = await products.json()

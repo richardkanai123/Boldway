@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET(req) {
+export async function GET(req, { params }) {
 
     const products = [
         {
@@ -147,6 +147,11 @@ export async function GET(req) {
         }
     ];
 
-
-    return NextResponse.json({ products })
+    const FilteredObject = products.filter(product => product.id === parseInt(params.id))
+    if (FilteredObject.length != 0) {
+        return NextResponse.json({ FilteredObject })
+    }
+    else {
+        return NextResponse.json({ error: "Not Found" })
+    }
 }

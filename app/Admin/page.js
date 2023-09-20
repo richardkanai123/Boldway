@@ -5,12 +5,19 @@ import { MdPending } from 'react-icons/md'
 import { FaPeopleGroup } from 'react-icons/fa6'
 import { BiSolidMessageDots } from 'react-icons/bi'
 import { BarChat } from '../_Components/AdminComponents/BarChat'
+import Greetings from '../_Components/AdminComponents/Greetings'
 
 const Page = () => {
     return (
         <div className='flex-1 transition-all duration-200 delay-150 bg-slate-100 min-h-screen  flex flex-col align-middle items-center flex-wrap gap-2  ease-linear p-2  '>
 
-            <div className="w-full mb-2">Header</div>
+            <div className="w-full text-yellow-700 mb-1 flex items-center align-middle justify-around">
+                <h1 className='font-bold'>DashBoard</h1>
+                <div className="flex">
+                    <Greetings username={"Boldway"} />
+                </div>
+
+            </div>
             <div className="w-full flex gap-2 flex-wrap align-middle items-center justify-around shadow-inner border-b border-slate-400 p-2 ">
                 <InfoCard CardTitle={"Total Sales"} figure={200}
                     details={"Ksh. earned all from Sales"}
