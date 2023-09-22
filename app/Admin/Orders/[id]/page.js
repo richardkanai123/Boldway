@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import OrderStatusChanger from '@/app/_Components/AdminComponents/OrderStatusChanger'
 import OrderCostCalculator from '@/app/_Components/AdminComponents/OrderCostCalculator'
-import OrderCustomerDetails from '@/app/_Components/AdminComponents/ORderCustomerDetails'
 import OrderDetailsCard from '@/app/_Components/AdminComponents/OrderDetailsCard'
+import OrderCustomerDetails from '@/app/_Components/AdminComponents/OrderCustomerDetails'
 
 const Page = async ({ params }) => {
     //   TODO: fetch neccesary data, know how to handle multiple products in one order
