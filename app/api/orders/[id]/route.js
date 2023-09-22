@@ -5,11 +5,13 @@ export async function GET(req, { params }) {
     const orders = [
         {
             orderID: 1,
-            customerID: 101,
-            customerName: "Alice Johnson",
+            customerID: '111',
+            customerName: "John Doe",
             dateOrdered: "2023-09-01",
             products: [
-                { productId: 106, Quantity: 3 },
+                {
+                    productId: 106, Quantity: 3, variant: "black"
+                },
             ],
             orderStatus: "pending",
             timeOrdered: "09:30 AM",
@@ -20,12 +22,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 2,
-            customerID: 102,
-            customerName: "Bob Smith",
+            customerID: '112',
+            customerName: "Jane Smith",
             dateOrdered: "2023-09-02",
             products: [
-                { productId: 103, Quantity: 1 },
-                { productId: 103, Quantity: 4 },
+                { productId: 103, Quantity: 1, variant: "black" },
+                { productId: 103, Quantity: 4, variant: "black" },
             ],
             orderStatus: "processing",
             timeOrdered: "11:15 AM",
@@ -36,12 +38,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 3,
-            customerID: 103,
-            customerName: "Charlie Brown",
+            customerID: '113',
+            customerName: "Chris Johnson",
             dateOrdered: "2023-09-03",
             products: [
-                { productId: 101, Quantity: 1 },
-                { productId: 103, Quantity: 4 },
+                { productId: 101, Quantity: 1, variant: "Grey" },
+                { productId: 103, Quantity: 4, variant: "black" },
             ],
             orderStatus: "delivering",
             timeOrdered: "02:45 PM",
@@ -52,12 +54,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 4,
-            customerID: 104,
-            customerName: "David Davis",
+            customerID: '114',
+            customerName: "Emily Davis",
             dateOrdered: "2023-09-04",
             products: [
-                { productId: 105, Quantity: 2 },
-                { productId: 101, Quantity: 4 },
+                { productId: 105, Quantity: 2, variant: "black" },
+                { productId: 101, Quantity: 4, variant: "grey" },
             ],
             orderStatus: "pending",
             timeOrdered: "10:20 AM",
@@ -68,12 +70,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 5,
-            customerID: 105,
-            customerName: "Eve Wilson",
+            customerID: '115',
+            customerName: "Micheal Wilson",
             dateOrdered: "2023-09-05",
             products: [
-                { productId: 101, Quantity: 1 },
-                { productId: 102, Quantity: 4 },
+                { productId: 101, Quantity: 1, variant: "black" },
+                { productId: 102, Quantity: 4, variant: "black" },
             ],
             orderStatus: "processing",
             timeOrdered: "03:55 PM",
@@ -84,12 +86,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 6,
-            customerID: 106,
-            customerName: "Frank Lee",
+            customerID: '116',
+            customerName: "Olivia Brown",
             dateOrdered: "2023-09-06",
             products: [
-                { productId: 101, Quantity: 1 },
-                { productId: 105, Quantity: 4 },
+                { productId: 101, Quantity: 1, variant: "grey" },
+                { productId: 105, Quantity: 4, variant: "grey" },
             ], productId: 103,
             orderStatus: "pending",
             timeOrdered: "09:10 AM",
@@ -100,12 +102,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 7,
-            customerID: 107,
-            customerName: "Grace Moore",
+            customerID: '117',
+            customerName: "William Taylor",
             dateOrdered: "2023-09-07",
             products: [
-                { productId: 106, Quantity: 6 },
-                { productId: 103, Quantity: 1 },
+                { productId: 106, Quantity: 6, variant: "grey" },
+                { productId: 103, Quantity: 1, variant: "black" },
             ],
             orderStatus: "delivering",
             timeOrdered: "01:30 PM",
@@ -116,12 +118,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 8,
-            customerID: 108,
-            customerName: "Henry King",
+            customerID: '118',
+            customerName: "Sophia Clark",
             dateOrdered: "2023-09-08",
             products: [
-                { productId: 101, Quantity: 1 },
-                { productId: 103, Quantity: 4 },
+                { productId: 101, Quantity: 1, variant: "grey" },
+                { productId: 103, Quantity: 4, variant: "grey" },
             ],
             orderStatus: "pending",
             timeOrdered: "10:45 AM",
@@ -132,11 +134,13 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 9,
-            customerID: 109,
-            customerName: "Ivy Green",
+            customerID: '119',
+            customerName: "James White",
             dateOrdered: "2023-09-09",
             products: [
-                { productId: 101, Quantity: 1 },
+                {
+                    productId: 101, Quantity: 1, variant: "striped"
+                },
 
             ], productId: 109,
             orderStatus: "processing",
@@ -148,11 +152,13 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 10,
-            customerID: 110,
-            customerName: "Jack Turner",
+            customerID: 120,
+            customerName: "Ava Turner",
             dateOrdered: "2023-09-10",
             products: [
-                { productId: 101, Quantity: 1 },
+                {
+                    productId: 101, Quantity: 1, variant: "striped"
+                },
 
             ],
             orderStatus: "pending",
@@ -164,12 +170,12 @@ export async function GET(req, { params }) {
         },
         {
             orderID: 11,
-            customerID: 110,
-            customerName: "Jack Turner",
+            customerID: '120',
+            customerName: "Ava Turner",
             dateOrdered: "2023-09-11",
             products: [
-                { productId: 101, Quantity: 2 },
-                { productId: 102, Quantity: 1 }
+                { productId: 101, Quantity: 2, variant: "black" },
+                { productId: 102, Quantity: 1, variant: "striped" }
 
             ],
             orderStatus: "pending",

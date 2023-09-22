@@ -25,18 +25,6 @@ export async function GET(req, { params }) {
 
         },
         {
-            id: 3,
-            title: "Brown Leather Messenger Bag",
-            description: "A classic messenger bag made from genuine brown leather. It's perfect for carrying your laptop and essentials in style. The adjustable strap ensures a comfortable fit.",
-            price: 8000,
-            discountPrice: 7000,
-            colors: ["Brown", "Black", "Tan"],
-            imageUrl: "https://images.pexels.com/photos/3731256/pexels-photo-3731256.jpeg?auto=compress&cs=tinysrgb&w=600",
-            discouted: true
-
-        },
-
-        {
             id: 101,
             title: "Premium Leather Backpack",
             description: "Crafted from high-quality leather, this spacious backpack is both stylish and functional. It features multiple compartments, padded straps for comfort, and a sleek design.",
@@ -149,9 +137,9 @@ export async function GET(req, { params }) {
 
     const FilteredObject = products.filter(product => product.id === parseInt(params.id))
     if (FilteredObject.length != 0) {
-        return NextResponse.json({ FilteredObject })
+        return NextResponse.json(FilteredObject[0])
     }
     else {
-        return NextResponse.json({ error: "Not Found" })
+        return NextResponse.json({ error: "Not Found" }, { status: 500 })
     }
 }

@@ -5,10 +5,14 @@ export async function GET(req) {
     const orders = [
         {
             orderID: 1,
-            customerID: 101,
-            customerName: "Alice Johnson",
+            customerID: '111',
+            customerName: "John Doe",
             dateOrdered: "2023-09-01",
-            productId: 102,
+            products: [
+                {
+                    productId: 106, Quantity: 3, variant: "black"
+                },
+            ],
             orderStatus: "pending",
             timeOrdered: "09:30 AM",
             amountPaid: 3500, // Amount in Kenyan Shillings
@@ -18,10 +22,13 @@ export async function GET(req) {
         },
         {
             orderID: 2,
-            customerID: 102,
-            customerName: "Bob Smith",
+            customerID: '112',
+            customerName: "Jane Smith",
             dateOrdered: "2023-09-02",
-            productId: 105,
+            products: [
+                { productId: 103, Quantity: 1, variant: "black" },
+                { productId: 103, Quantity: 4, variant: "black" },
+            ],
             orderStatus: "processing",
             timeOrdered: "11:15 AM",
             amountPaid: 2200,
@@ -31,10 +38,13 @@ export async function GET(req) {
         },
         {
             orderID: 3,
-            customerID: 103,
-            customerName: "Charlie Brown",
+            customerID: '113',
+            customerName: "Chris Johnson",
             dateOrdered: "2023-09-03",
-            productId: 107,
+            products: [
+                { productId: 101, Quantity: 1, variant: "Grey" },
+                { productId: 103, Quantity: 4, variant: "black" },
+            ],
             orderStatus: "delivering",
             timeOrdered: "02:45 PM",
             amountPaid: 1000,
@@ -44,10 +54,13 @@ export async function GET(req) {
         },
         {
             orderID: 4,
-            customerID: 104,
-            customerName: "David Davis",
+            customerID: '114',
+            customerName: "Emily Davis",
             dateOrdered: "2023-09-04",
-            productId: 101,
+            products: [
+                { productId: 105, Quantity: 2, variant: "black" },
+                { productId: 101, Quantity: 4, variant: "grey" },
+            ],
             orderStatus: "pending",
             timeOrdered: "10:20 AM",
             amountPaid: 5500,
@@ -57,10 +70,13 @@ export async function GET(req) {
         },
         {
             orderID: 5,
-            customerID: 105,
-            customerName: "Eve Wilson",
+            customerID: '115',
+            customerName: "Micheal Wilson",
             dateOrdered: "2023-09-05",
-            productId: 108,
+            products: [
+                { productId: 101, Quantity: 1, variant: "black" },
+                { productId: 102, Quantity: 4, variant: "black" },
+            ],
             orderStatus: "processing",
             timeOrdered: "03:55 PM",
             amountPaid: 2900,
@@ -70,10 +86,13 @@ export async function GET(req) {
         },
         {
             orderID: 6,
-            customerID: 106,
-            customerName: "Frank Lee",
+            customerID: '116',
+            customerName: "Olivia Brown",
             dateOrdered: "2023-09-06",
-            productId: 103,
+            products: [
+                { productId: 101, Quantity: 1, variant: "grey" },
+                { productId: 105, Quantity: 4, variant: "grey" },
+            ], productId: 103,
             orderStatus: "pending",
             timeOrdered: "09:10 AM",
             amountPaid: 1500,
@@ -83,10 +102,13 @@ export async function GET(req) {
         },
         {
             orderID: 7,
-            customerID: 107,
-            customerName: "Grace Moore",
+            customerID: '117',
+            customerName: "William Taylor",
             dateOrdered: "2023-09-07",
-            productId: 106,
+            products: [
+                { productId: 106, Quantity: 6, variant: "grey" },
+                { productId: 103, Quantity: 1, variant: "black" },
+            ],
             orderStatus: "delivering",
             timeOrdered: "01:30 PM",
             amountPaid: 1800,
@@ -96,10 +118,13 @@ export async function GET(req) {
         },
         {
             orderID: 8,
-            customerID: 108,
-            customerName: "Henry King",
+            customerID: '118',
+            customerName: "Sophia Clark",
             dateOrdered: "2023-09-08",
-            productId: 104,
+            products: [
+                { productId: 101, Quantity: 1, variant: "grey" },
+                { productId: 103, Quantity: 4, variant: "grey" },
+            ],
             orderStatus: "pending",
             timeOrdered: "10:45 AM",
             amountPaid: 2800,
@@ -109,10 +134,15 @@ export async function GET(req) {
         },
         {
             orderID: 9,
-            customerID: 109,
-            customerName: "Ivy Green",
+            customerID: '119',
+            customerName: "James White",
             dateOrdered: "2023-09-09",
-            productId: 109,
+            products: [
+                {
+                    productId: 101, Quantity: 1, variant: "striped"
+                },
+
+            ], productId: 109,
             orderStatus: "processing",
             timeOrdered: "02:00 PM",
             amountPaid: 1200,
@@ -122,10 +152,15 @@ export async function GET(req) {
         },
         {
             orderID: 10,
-            customerID: 110,
-            customerName: "Jack Turner",
+            customerID: 120,
+            customerName: "Ava Turner",
             dateOrdered: "2023-09-10",
-            productId: 110,
+            products: [
+                {
+                    productId: 101, Quantity: 1, variant: "striped"
+                },
+
+            ],
             orderStatus: "pending",
             timeOrdered: "11:05 AM",
             amountPaid: 650,
@@ -135,10 +170,14 @@ export async function GET(req) {
         },
         {
             orderID: 11,
-            customerID: 110,
-            customerName: "Jack Turner",
+            customerID: '120',
+            customerName: "Ava Turner",
             dateOrdered: "2023-09-11",
-            productId: 113,
+            products: [
+                { productId: 101, Quantity: 2, variant: "black" },
+                { productId: 102, Quantity: 1, variant: "striped" }
+
+            ],
             orderStatus: "pending",
             timeOrdered: "12:05 PM",
             amountPaid: 800,

@@ -15,10 +15,10 @@ const ProductCard = ({ productData }) => {
         })
     }
     return (
-        <div className='rounded-md relative  bg-slate-300 flex flex-col p-2 w-full md:w-[250px] text-left'>
+        <div className='rounded-md relative  bg-slate-300 flex flex-col p-2 w-full md:w-[250px] text-left justify-around'>
             <Image src={imageUrl}
-                className='self-center mb-2 p-1 rounded ring-1 ring-slate-100'
-                alt={title} width={100} height={80} />
+                className='self-center mb-2 p-1 rounded-lg overflow-hidden'
+                alt={title} width={100} height={80} loading='lazy' />
             <h1 className="text-left font-extrabold text-base mb-1 ">{title}</h1>
             <p className='text-base font-light '>
                 {description}

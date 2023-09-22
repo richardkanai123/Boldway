@@ -69,7 +69,7 @@ const columns = [
         name: 'Date',
         selector: row => row.dateOrdered,
         sortable: true,
-        hide: 'sm'
+        hide: 'md'
 
     },
     {
@@ -131,7 +131,7 @@ const ExpandedComponent = ({ data }) => {
 
             <section className='w-full flex items-center justify-around align-middle'>
                 <p className='text-sm tracking-tighter font-normal text-sky-950 p-1 flex flex-wrap justify-around gap-1 lg:hidden' >Paid Amount: {data.amountPaid}</p>
-                <p className='text-sm tracking-tighter font-normal text-sky-950 p-1 flex flex-wrap justify-around gap-1 lg:hidden' >Paid Pending: {data.pendingAmount}</p>
+                <p className='text-sm tracking-tighter font-normal text-sky-950 p-1 flex flex-wrap justify-around gap-1 lg:hidden' >Balance: {data.pendingAmount}</p>
                 <p className='text-sm tracking-tighter font-normal text-sky-950 p-1 flex flex-wrap justify-around gap-1 lg:hidden' >Order Date: {data.dateOrdered}</p>
                 <p className='text-sm tracking-tighter  font-normal text-sky-950 p-1 flex flex-wrap justify-around gap-1 lg:hidden' >
                     Payment Mode: {data.paymentMode}</p>

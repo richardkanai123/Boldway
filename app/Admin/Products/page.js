@@ -6,10 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 // ${process.env.Web_Url}
 const Page = async () => {
     const products = await fetch(`${process.env.Web_Url}/api/products`, {
-        cache: "no-cache"
+        next: { revalidate: 120 }
     })
 
     const data = await products.json()
+
     const ProductsData = data.products
     return (
         <div className=' flex-1 flex flex-col flex-wrap justify-evenly gap-2 p-4 bg-slate-200 min-h-screen transition-all ease-linear '>
