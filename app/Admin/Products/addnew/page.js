@@ -37,11 +37,11 @@ const Page = () => {
         <div className='w-full flex-1 flex flex-col flex-wrap justify-evenly gap-2 p-4 bg-slate-200 min-h-screen transition-all ease-linear '>
 
             <div className="w-full p-2 flex items-center justify-between align-middle">
-                <h1 className='font-bold  text-yellow-600'>New Product</h1>
+                <h1 className='font-bold  text-yellow-600'>Adding New Product</h1>
 
-                <Link href={'/Admin/Products/addnew'}
+                <Link href={'/Admin/Products'}
                     className='p-2 text-xs text-white   border-0 ring-o hover:bg-yellow-600 hover:rounded-lg hover:ring-0 bg-yellow-700 transition-all ease-linear duration-400'>
-                    Add new
+                    All Products
                 </Link>
             </div>
 

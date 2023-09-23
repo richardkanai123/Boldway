@@ -8,6 +8,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { IoChevronBackCircleSharp } from 'react-icons/io5';
+import { RxSlash } from 'react-icons/rx';
 
 const schema = yup.object().shape({
     title: yup.string('must be a string').required("Required"),
@@ -36,7 +38,7 @@ const EditProductForm = ({ productData }) => {
         }
     );
 
-    const AddNewProduct = (data) => {
+    const EditExistingProduct = (data) => {
         if (errors === null | errors === undefined) {
             console.log(errors);
         }
@@ -56,7 +58,13 @@ const EditProductForm = ({ productData }) => {
         <div className='w-[90%] self-center flex-1 flex flex-col flex-wrap justify-evenly gap-2 p-4 bg-slate-200 min-h-screen transition-all ease-linear '>
 
             <div className="w-full p-2 flex items-center justify-between align-middle">
-                <h1 className='font-bold  text-yellow-600'>Editing Product:{id}</h1>
+                <div className='p-1 flex items-center gap-2   align-middle'>
+                    <Link className='text-yellow-700 font-extrabold' href={"/Admin/Products"}>
+                        <IoChevronBackCircleSharp />
+                    </Link>
+                    <span className='text-xl font-bold text-yellow-900'> <RxSlash /> </span>
+                    <h1 className='font-semibold  text-yellow-700'>Editing Product:{id}</h1>
+                </div>
 
                 <Link href={'/Admin/Products/addnew'}
                     className='p-2 text-xs text-white   border-0 ring-o hover:bg-yellow-600 hover:rounded-lg hover:ring-0 bg-yellow-700 transition-all ease-linear duration-400'>
@@ -66,7 +74,7 @@ const EditProductForm = ({ productData }) => {
 
             <div className='w-full p-2 shadow-inner flex align-middle justify-center gap-2 flex-wrap'>
 
-                <form className='w-full max-w-[250px] md:max-w-md flex flex-col p-2 items-center justify-center gap-4 ' onSubmit={handleSubmit(AddNewProduct)}>
+                <form className='w-full max-w-[250px] md:max-w-md flex flex-col p-2 items-center justify-center gap-4 ' onSubmit={handleSubmit(EditExistingProduct)}>
                     <Image width={150} height={100} src={imageUrl} alt={title + 'image'} />
                     <div className="w-full">
                         <label htmlFor="title">Title</label>
@@ -115,8 +123,8 @@ const EditProductForm = ({ productData }) => {
                         <input type='file' accept='.jpeg,.jpg,.png' max={10} />
 
                     </div>
-                    <button className='p-2 text-white bg-yellow-700  ring-0 outline-none hover:rounded-xl hover:bg-yellow-950 transition-all ease-in-out delay-100 duration-500' type="submit">
-                        Add Product
+                    <button className='p-2 text-white rounded-md bg-yellow-700  ring-0 outline-none hover:rounded-full hover:bg-yellow-950 transition-all ease-in-out delay-100 duration-500' type="submit">
+                        Update
                     </button>
                 </form>
             </div>

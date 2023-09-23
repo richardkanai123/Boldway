@@ -40,7 +40,7 @@ const Page = async ({ params }) => {
                     payStatus={paymentStatus}
                 />
             </div>
-            <table className='p-1 text-center border-collapse border-slate-400 table-fixed w-full shadow-xl'>
+            <table className='p-1 text-center border-collapse border-slate-400 table-fixed w-full shadow-xl border-spacing-y-4   '>
                 <thead className='w-full bg-zinc-300  text-sm font-light '>
                     <tr className='w-full font-light'>
                         <th>ID</th>
@@ -52,21 +52,21 @@ const Page = async ({ params }) => {
                 </thead>
 
 
-                <tbody className='w-full text-xs'>
+                <tbody className='w-full text-[10px] md:text-xs'>
                     {
                         products.map((product) => (
-                            <tr key={`${orderID}+${product.productId}`}>
+                            <tr className='border-b border-slate-300' key={`${orderID}+${product.productId}`}>
                                 <td>{product.productId}</td>
-                                <td>Name</td>
+                                <td>{product.name}</td>
                                 <td>{product.variant}</td>
                                 <td>{product.Quantity}</td>
-                                <td>100</td>
+                                <td>{(product.unitPrice) * (product.Quantity)}</td>
                             </tr>
                         ))}
                 </tbody>
             </table>
 
-            <OrderCostCalculator />
+            <OrderCostCalculator products={products} />
 
             <OrderStatusChanger />
 
