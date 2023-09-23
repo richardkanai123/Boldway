@@ -30,7 +30,7 @@ const Page = async ({ params }) => {
                 <p className='self-end text-lg font-semibold'>Order {params.id} Details</p>
             </div>
             <div className=' w-full shadow-inner flex flex-col justify-around md:flex-row align-middle  gap-2 p-2 mb-2 border-b-2 '>
-                <OrderCustomerDetails name={customerName} customerID={customerID} />
+                <OrderCustomerDetails customerID={customerID} />
                 <OrderDetailsCard
                     mode={paymentMode}
                     date={dateOrdered}
