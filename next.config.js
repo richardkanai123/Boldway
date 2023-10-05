@@ -4,7 +4,7 @@ const nextConfig = {
         dangerouslyAllowSVG: true,
         contentDispositionType: 'attachment',
         contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-        domains: ["images.pexels.com"]
+        domains: ["images.pexels.com", 'w3.org']
     }
 }
 
